@@ -1,5 +1,6 @@
 {
   "name": "green-shop",
+  "homepage": "https://github.com/plewfx/green-shop.git",
   "private": true,
   "version": "0.0.0",
   "type": "module",
