@@ -23,3 +23,43 @@
         transition: background .3s;
     }
 }
+
+@font-face {
+    font-family: Cera Pro;
+    src: url('./assets/fonts/CeraPro-Regular.ttf'),
+        url('./assets/fonts/CeraPro-Regular.woff');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: semi-condensed;
+    font-variant: normal;
+}
+
+@font-face {
+    font-family: Cera Pro;
+    src: url('./assets/fonts/CeraPro-Medium.ttf'),
+        url('./assets/fonts/CeraPro-Medium.woff');
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: semi-condensed;
+    font-variant: normal;
+}
+
+@font-face {
+    font-family: Cera Pro;
+    src: url('./assets/fonts/CeraPro-Bold.ttf'),
+        url('./assets/fonts/CeraPro-Bold.woff');
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: semi-condensed;
+    font-variant: normal;
+}
+
+@font-face {
+    font-family: Cera Pro;
+    src: url('./assets/fonts/CeraPro-Black.ttf'),
+        url('./assets/fonts/CeraPro-Black.woff');
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: semi-condensed;
+    font-variant: normal;
+}

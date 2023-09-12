@@ -8,6 +8,7 @@ module.exports = {
   theme: {
     fontFamily: {
       'roboto': ['Roboto', 'sans-serif'],
+      'cera': ['Cera Pro', 'sans-serif']
     },
     lineHeight: {
       90: '90%',
@@ -58,6 +59,7 @@ module.exports = {
       3: '0.20vw',
       7: '0.48vw',
       9: '0.625vw',
+      10: '0.7vw',
       11: '0.76vw',
       12: '0.83vw',
       17: '1.18vw',

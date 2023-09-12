@@ -2,8 +2,8 @@ import { NavLink, Link } from "react-router-dom"
 
 const Header = () => {
     return (
-        <header className="fixed top-0 left-0 right-0 bg-white">
-            <div className="container flex items-start justify-between pt-26 border-b-[0.02vw] border-[rgba(70,163,88,0.50)]">
+        <header className="fixed top-0 left-0 right-0 z-50 bg-white">
+            <div className="container flex items-start justify-between pt-26 pb-10 border-b-[0.02vw] border-[rgba(70,163,88,0.50)]">
                 <Link>
                     <svg className="w-150" xmlns="http://www.w3.org/2000/svg" width="150" height="35" viewBox="0 0 150 35" fill="none">
                     <g clipPath="url(#clip0_2_71)">
@@ -26,16 +26,16 @@ const Header = () => {
                     </svg>
                 </Link>
                 <ul className="flex gap-50">
-                    <li className="pb-[1.7vw]">
+                    <li>
                         <NavLink to="/green-shop/" className={"text-16 text-grey-3D pb-25"} style={({isActive}) => isActive ? {fontWeight: '700', borderBottom: '0.2vw solid #46A358'} : null}>Home</NavLink>
                     </li>
-                    <li className="pb-[1.7vw]">
+                    <li>
                         <NavLink to="/green-shop/shop" className={"text-16 text-grey-3D pb-25"} style={({isActive}) => isActive ? {fontWeight: '700', borderBottom: '0.2vw solid #46A358'} : null}>Shop</NavLink>
                     </li>
-                    <li className="pb-[1.7vw]">
+                    <li>
                         <NavLink to="/green-shop/plant-cares" className={"text-16 text-grey-3D pb-25"} style={({isActive}) => isActive ? {fontWeight: '700', borderBottom: '0.2vw solid #46A358'} : null}>Plant cares</NavLink>
                     </li>
-                    <li className="pb-[1.7vw]">
+                    <li>
                         <NavLink to="/green-shop/blogs" className={"text-16 text-grey-3D pb-25"} style={({isActive}) => isActive ? {fontWeight: '700', borderBottom: '0.2vw solid #46A358'} : null}>Blogs</NavLink>
                     </li>
                 </ul>

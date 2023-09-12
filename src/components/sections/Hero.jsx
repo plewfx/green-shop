@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 const Hero = () => {
     return (
-        <section>
+        <section className="pt-12">
             <div className="container grid grid-cols-2 pt-68 pb-85 pl-43 bg-[linear-gradient(98deg,_rgba(245,245,245,0.50)_-23.46%,_rgba(245,245,245,0.50)_107.51%)]">
                 <div className="flex flex-col items-start gap-55">
                     <div className="flex flex-col gap-9">
