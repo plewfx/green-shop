@@ -536,7 +536,7 @@ const Footer = () => {
                         </div>
                         <div className="flex flex-col gap-13 mr-[9vw]">
                             <h5 className="text-18 font-bold">We accept</h5>
-                            <img className="w-[15.55vw]" src="/src/assets/payment.png" alt="" />
+                            <div className="bg-image bg-[url('https://s3-alpha-sig.figma.com/img/1e46/0c89/ee17b2b09a69f96d2552ed3b0b04ac05?Expires=1695600000&Signature=R7cvZ6iQQ3k2Tg3FzsILR9zcw9KdKSquR2MGcTMlziQ7-1-QOeEjoD9HBeGWvprEtE~zuPxlv0Y934bYuXnccDom6d-Twv9u67d6Ph62qvhWJ0V9BRihQXiLpTh3VR925doADzFwn9Zcc-oY69aurE~VnGNmZW2MMC-vDKRmojzqeyFlo12T5HSv1FF57xLcdjrb-JkA0MQdOnOaCoKAHEBzWmT6FxIiAmVT5x5-F2Luq8cH0FqCuIiCSkdEZ8zK9rqqJJ6EQrBdY4W-Vpt4a6B--Da-0V-tmKCdd0amhL~oBh0JdXvxPTeIvtwhVBlxRHRqtDm7njfR7hQwCcDLrA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4')] h-[1.8vw] w-[15.55vw]"></div>
                         </div>
                     </div>
                 </div>

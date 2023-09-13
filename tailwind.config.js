@@ -7,11 +7,13 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'roboto': ['Roboto', 'sans-serif'],
-      'cera': ['Cera Pro', 'sans-serif']
+      'cera': ['Cera Pro', 'sans-serif'],
+      'hanging': ['Hanging Letters', 'sans-serif']
     },
     lineHeight: {
+      70: '70%',
       90: '90%',
+      125: '125%',
       150: '150%',
       160: '160%',
       170: '170%',
@@ -20,10 +22,12 @@ module.exports = {
     borderRadius: {
       4: '0.27vw',
       6: '0.41vw',
+      30: '2.08vw',
       'circle': '50%'
     },
     borderWidth: {
       1: '0.07vw',
+      2: '0.14vw',
     },
     width: {
       12: '0.83vw',
@@ -53,17 +57,23 @@ module.exports = {
       18: '1.25vw',
       19: '1.32vw',
       20: '1.38vw',
+      23: '1.59vw',
+      65: '4.51vw',
     },
     padding: {
       2: '0.14vw',
       3: '0.20vw',
       7: '0.48vw',
+      8: '0.55vw',
       9: '0.625vw',
       10: '0.7vw',
       11: '0.76vw',
       12: '0.83vw',
+      14: '1vw',
       17: '1.18vw',
+      18: '1.25vw',
       19: '1.32vw',
+      24: '1.66vw',
       25: '1.73vw',
       26: '1.80vw',
       27: '1.875vw',
@@ -87,12 +97,14 @@ module.exports = {
       13: '0.902vw',
       15: '1.04vw',
       17: '1.18vw',
+      18: '1.25vw',
       20: '1.38vw',
       25: '1.73vw',
       26: '1.80vw',
       30: '2.08vw',
       33: '2.29vw',
       34: '2.36vw',
+      36: '2.5vw',
       50: '3.47vw',
       55: '3.819vw',
       60: '4.16vw',
