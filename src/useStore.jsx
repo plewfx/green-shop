@@ -79,3 +79,40 @@ export const usePlantsStore = create(set => ({
       return { plants: updatedPlants };
     }),
 }))
+
+export const useBlogsStore = create(set => ({
+    blogs: [
+        {
+            img: 'https://s3-alpha-sig.figma.com/img/4f35/4de5/b3a1897ab9540ae4953f1e0f0ace9952?Expires=1695600000&Signature=brNz1Vvx6HlcHMYObN1zJPYIj1BGZIiWpalgDB~25V~XXN7d5kqZcqpRg9SaAiAyfctzHP~d1VY47kMoWUgU-7QttlkCiUa1-X2MD6vtd3r3m816X33IupQrwogVl0VAjv-V70Jir9c9hn72GHaHMBA~8LCw8mU-LUPFZJpBj-wSffm7bNEMczD18i-JKQBfWsOK0e9LrszL9LLp9WspTyT449X0kN2NMcql88sq7X~X0kpJ3f-98ZJT7RuxsD5m6NcHrxeZS9geY2II3sCb0up9iKy6C9wdiJeL1ZPYMturT9blwmuxvIwMhgNN7so0Ukww~iSIeeIdx6U-BzEqXQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+            date: 'September 12',
+            readTime: 6,
+            title: `Cactus & Succulent 
+            Care Tips`,
+            desc: 'Cacti are succulents are easy care plants for any home or patio. '
+        },
+        {
+            img: 'https://s3-alpha-sig.figma.com/img/5d6a/fe05/19b43ea40d6912ed9f6c86bde26ac437?Expires=1695600000&Signature=V4MQBUvZonEKuR3goc58tuFKEK1RQ48pbjhaPBHxdAQMQliJvAJZyndV87oTfm-baTf6STmCct0-ox~XlZ9KQ5MJLw7i5wRSljBf-jYVnapYzqagroG8u9ad7hY1T42r6ghc4HsMZ55bPSnJVnjr1Y55CrLs~uvEWCdzsO03RwEwm30BQZ6Q1e0vfP3x41TjDbeeVc4gOLQUQpD3~Y1jR2bpR~iKuNTXfeAHVNLta00QZyhoib4Pj43ESj5vpPdybvmuS4GNkm3SSuiJFFQIZ-P6W8Wn767sR0mEh-SKri9Ehvpl2-dka~FuEIUSzAnkebS40lEcsO9ag7QjZse7wQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+            date: 'September 13',
+            readTime: 2,
+            title: `Top 10 Succulents for
+            Your Home`,
+            desc: 'Best in hanging baskets. Prefers medium to high light.'
+        },
+        {
+            img: 'https://s3-alpha-sig.figma.com/img/708d/5ac3/4916119d54b3f3ce81cb3585303dc87b?Expires=1695600000&Signature=pxk99EarWXbFzQFIjEFIxFb~CtSPWrSPN1Q2xkLnFip-VFxzGt~o6fzemJMolONDFRxKyJeHfknGGo~O~MLMRAioHRKo3CDUrpOimtpXuHZiW8o0-TmsrSeuXH2S9GBBPk9VDPUijS~ZpbOC2qonFbcSVn9ZzmVneQRZJCZXnfScVe1rRoSNzGRhkaxr8I3WJWau-GDnYdmzBo-uoMS6QGVmqdihR1l8NXytMwskY5M050i1sAVCg8G3Y1WUABHo9gVCv3Ws0WhjKobzuPKmYJfc9XwvCJdoYpeV46c5Wf5SVXE9FVrlipRrvtuStaHKDxXaE1XEoB6JEYBiLtN~SA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+            date: 'September 14',
+            readTime: 3,
+            title: `Cacti & Succulent 
+            Care Tips`,
+            desc: 'Cacti and succulents thrive in containers and because most are..'
+        },
+        {
+            img: 'https://s3-alpha-sig.figma.com/img/76ec/a5ae/aad8a62909bb4bd3fb02922695ada788?Expires=1695600000&Signature=i2N6rIyNhLAcWG5ZP1W1sCdIQCTzhJw4JWF8Gi~iO0UB-YyeR4NJYRrF6egK~OwrVbJ-vIrrtbc86DJ9Rf3RtYe4x8sTKfSYbNchaTFzeFEQXWv5Kzm0twVVTA6oI~2uHctws1gSDHeUkJ~VAPcgGh0tNRxUaz~cy8klAk~3DGIOrPXC6ro2eA~KBuTup9L9bFlTcUPD~dMKEMKA8fOiv0bM~R9Xep~JfEjhDL7TGr3RanBwRJi1Ec6hizcOH7eoT7Vk-jFlkK1i1CecWgGrBEDkK0SGSwfTJG1kAJzWfCmAfUV02r3~JupSpQdhokXtB2v-1Srjkq6HSqCgP5P-eg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+            date: 'September 15',
+            readTime: 2,
+            title: `Best Houseplants 
+            Room by Room`,
+            desc: 'The benefits of houseplants are endless. In addition to..'
+        },
+    ]
+}))

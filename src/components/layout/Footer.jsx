@@ -4,7 +4,7 @@ const Feature = ({ svg1, svg2, name, desc }) => {
     return (
         <div className="h-[13.6vw] flex flex-col justify-end gap-15 pr-34 border-[rgba(70,163,88,0.1)] border-r-1">
             <div className="flex flex-col items-center relative pb-3 after:bg-primary after:absolute after:bottom-0 after:left-0 after:w-[5.13vw] after:h-[5.13vw] after:rounded-circle after:opacity-[0.13]">
-                <div className="absolute bottom-[0.5vw] left-[1vw] flex flex-col items-center">
+                <div className="h-[6.43vw] absolute bottom-[0vw] left-[1vw] flex flex-col items-center">
                     {svg1}{svg2}
                 </div>
             </div>
@@ -427,7 +427,7 @@ const Footer = () => {
   return (
     <footer>
         <div className="container">
-            <div className="bg-grey-FB pb-25 pt-46">
+            <div className="bg-grey-FB pb-25 pt-50">
                 <div className="max-w-[95.8%] mx-auto flex justify-between gap-34">
                     {
                         features.map(feature => {
@@ -445,7 +445,7 @@ const Footer = () => {
                     <div className="flex flex-col gap-17">
                         <h5 className="text-18 font-bold">Would you like to join newsletters?</h5>
                         <form className="flex items-center rounded-6 shadow-[0vw_0vw_1.38vw_rgba(0,0,0,0.06)] bg-white">
-                            <input className="rounded-l-6 pl-11 flex-auto py-12 placeholder:text-grey-AC focus:outline-primary" type="text" placeholder="enter your email address..." />
+                            <input className="rounded-l-6 pl-11 flex-auto py-12 placeholder:text-grey-AC placeholder:text-14 focus:outline-primary" type="text" placeholder="enter your email address..." />
                             <button className="rounded-r-6 text-18 text-white font-bold bg-primary hover:bg-primaryHover px-25 py-12">Join</button>
                         </form>
                         <p className="text-13 text-grey-72 leading-170">We usually post offers and challenges in newsletter. We’re your online houseplant destination. We offer a wide range of houseplants and accessories shipped directly from our (green)house to yours! </p>
