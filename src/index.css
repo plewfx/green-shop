@@ -73,3 +73,23 @@
     font-family: Hanging Letters;
     src: url('./assets/fonts/Hanged Letters.ttf');
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.5vw;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: theme(colors.primary); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: theme(colors.primaryHover); 
+}

@@ -1,5 +1,13 @@
 import Slider from '@mui/material/Slider';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 import React, { useState } from 'react';
+import { usePlantsStore } from '../../useStore';
+import Plant from '../Plant';
 
 const Category = ({ name, count }) => {
     const [ selected, setSelected ] = useState(false)
@@ -51,16 +59,23 @@ function valuetext(value) {
 }
 
 const Plants = () => {
-    const [value, setValue] = React.useState([20, 37]);
+    const [value, setValue] = React.useState([0, 100]);
+    const [sort, setSort] = React.useState('')
 
-    const handleChange = (event, newValue) => {
+    const handleChangeValue = (event, newValue) => {
       setValue(newValue);
     };
 
+    const handleChangeAge = (event) => {
+        setSort(event.target.value);
+    };
+
+    const plants = usePlantsStore((state) => state.plants)
+
     return (
-        <section className='mt-[3.2vw]'>
-            <div className="container grid grid-cols-[25fr_75fr]">
-                <div className="flex flex-col bg-grey-FB">
+        <section className='my-[3.2vw]'>
+            <div className="container grid grid-cols-[25fr_75fr] grid-rows-[1fr_2.43vw] gap-y-90 gap-x-54">
+                <div className="flex flex-col bg-grey-FB justify-between">
                     <div className="flex flex-col gap-36 pl-18 pr-24">
                         <div className="flex flex-col gap-15 pt-14">
                             <h5 className='text-18 font-bold'>Categories</h5>
@@ -85,11 +100,13 @@ const Plants = () => {
                                     className='w-[15vw]'
                                     getAriaLabel={() => ''}
                                     value={value}
-                                    onChange={handleChange}
+                                    onChange={handleChangeValue}
                                     valueLabelDisplay="auto"
                                     getAriaValueText={valuetext}
                                     color='primary'
                                     size='medium'
+                                    min={0}
+                                    max={200}
                                 />
                                 <label className='text-15 font-bold'>Price: <span className='text-primary'>${value[0]} - ${value[1]}</span></label>
                                 <button className='bg-primary hover:bg-primaryHover py-8 px-25 text-16 font-bold rounded-6 leading-125 text-white'>Filter</button>
@@ -135,6 +152,60 @@ const Plants = () => {
                         <div className="absolute bottom-[5.3vw] right-[1.2vw] w-[3.125vw] h-[3.125vw] rounded-circle bg-[linear-gradient(145deg,_rgba(70,163,88,0.30)_-46.09%,_rgba(70,163,88,000)_103.28%)]"></div>
                     </div>
                 </div>
+                <div className="flex flex-col gap-30">
+                    <div className="flex justify-between">
+                     <div className="flex gap-40">
+                        <button className="text-primary font-bold text-15 pb-7 border-b-2 border-primary">All Plants</button>
+                        <button className="text-15 pb-7 border-primary">New Arrivals</button>
+                        <button className="text-15 pb-7 border-primary">Sale</button>
+                     </div>
+                     <FormControl className="w-[10vw]" variant="standard">
+                        <InputLabel id="demo-simple-select-standard-label">Short by:</InputLabel>
+                        <Select
+                        labelId="demo-simple-select-standard-label"
+                        id="demo-simple-select-standard"
+                        value={sort}
+                        onChange={handleChangeAge}
+                        label="Sort by:"
+                        >
+                        <MenuItem value="">
+                            <em>Default sorting</em>
+                        </MenuItem>
+                        <MenuItem value={10}>Price (low to high)</MenuItem>
+                        <MenuItem value={20}>Price (high to low)</MenuItem>
+                        </Select>
+                    </FormControl>
+                    </div>
+                    <div className="flex flex-col gap-93">
+                        <div className="flex flex-wrap gap-x-40 gap-y-70">
+                            {
+                                plants.map((plant, index) => {
+                                    return (
+                                        <Plant
+                                            key={plant.name}
+                                            index={index}
+                                            plant={plant}
+                                        />
+                                    )
+                                })
+                            }
+                        </div>
+                    </div>
+                </div>
+                <ButtonGroup
+                    className='col-[2_/_3] justify-end'
+                    aria-label="outlined button group"
+                >
+                    <Button className='w-[2.43vw] h-[2.43vw] text-18' variant='contained' key="one">1</Button>
+                    <Button className='w-[2.43vw] h-[2.43vw] text-18' key="two">2</Button>
+                    <Button className='w-[2.43vw] h-[2.43vw] text-18' key="three">3</Button>
+                    <Button className='w-[2.43vw] h-[2.43vw] text-18' key="four">4</Button>
+                    <Button className='w-[2.43vw] h-[2.43vw] text-18' key="more">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
+                            <path d="M1.375 0.75C1.375 0.75 6.625 3.858 6.625 6C6.625 8.14125 1.375 11.25 1.375 11.25" stroke="#3D3D3D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                    </Button>
+                </ButtonGroup>
             </div>
         </section>
     )
