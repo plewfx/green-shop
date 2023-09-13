@@ -16,7 +16,7 @@ const Plant = ({ plant, index }) => {
     };
 
     return (
-        <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="flex flex-col gap-12 pt-[0.07vw] hover:pt-[0] hover:border-t-1 hover:border-primary">
+        <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="flex flex-col gap-12 border-transparent border-t-1 hover:border-primary">
             <div className='relative flex flex-col items-center justify-center h-[20.8vw] bg-grey-FB'>
                 <div className='bg-image w-[17.36vw] h-[17.36vw] mix-blend-multiply' style={{backgroundImage: `url(${plant.img})`}}>
                     {

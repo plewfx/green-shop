@@ -59,8 +59,26 @@ function valuetext(value) {
 }
 
 const Plants = () => {
-    const [value, setValue] = React.useState([0, 100]);
+    const [value, setValue] = React.useState([0, 200]);
+    const [actualValue, setActualValue] = React.useState([0, 200]);
     const [sort, setSort] = React.useState('')
+    const plants = usePlantsStore((state) => state.plants)
+
+    const isInRange = (value) => {
+        return value.price <= actualValue[1] && value.price >= actualValue[0]
+    }
+
+    const filteredPlants = plants.filter(isInRange)
+
+    const plantsList = filteredPlants.map((plant, index) => {
+        return (
+            <Plant
+                key={plant.name}
+                index={index}
+                plant={plant}
+            />
+        )
+    })
 
     const handleChangeValue = (event, newValue) => {
       setValue(newValue);
@@ -70,7 +88,6 @@ const Plants = () => {
         setSort(event.target.value);
     };
 
-    const plants = usePlantsStore((state) => state.plants)
 
     return (
         <section className='my-[3.2vw]'>
@@ -108,8 +125,8 @@ const Plants = () => {
                                     min={0}
                                     max={200}
                                 />
-                                <label className='text-15 font-bold'>Price: <span className='text-primary'>${value[0]} - ${value[1]}</span></label>
-                                <button className='bg-primary hover:bg-primaryHover py-8 px-25 text-16 font-bold rounded-6 leading-125 text-white'>Filter</button>
+                                <label className='text-15 font-bold'>Price: <span className='text-primary'>${actualValue[0]} - ${actualValue[1]}</span></label>
+                                <button onClick={() => setActualValue(value)} className='bg-primary hover:bg-primaryHover py-8 px-25 text-16 font-bold rounded-6 leading-125 text-white'>Filter</button>
                             </div>
                         </div>
                         <div className="flex flex-col gap-15 pt-14 pb-19">
@@ -177,17 +194,9 @@ const Plants = () => {
                     </FormControl>
                     </div>
                     <div className="flex flex-col gap-93">
-                        <div className="flex flex-wrap gap-x-40 gap-y-70">
+                        <div className="flex items-center flex-wrap gap-x-40 gap-y-70">
                             {
-                                plants.map((plant, index) => {
-                                    return (
-                                        <Plant
-                                            key={plant.name}
-                                            index={index}
-                                            plant={plant}
-                                        />
-                                    )
-                                })
+                                plantsList.length ? plantsList : <h1 className='font-black text-30'>Empty :(</h1>
                             }
                         </div>
                     </div>

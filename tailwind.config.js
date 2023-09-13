@@ -165,6 +165,7 @@ module.exports = {
       },
       primary: '#46A358',
       primaryHover: '#3C884B',
+      transparent: 'transparent'
     },
   }
 }
