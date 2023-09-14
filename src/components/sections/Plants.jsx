@@ -60,12 +60,12 @@ function valuetext(value) {
 
 const Plants = () => {
     const [value, setValue] = React.useState([0, 200]);
-    const [actualValue, setActualValue] = React.useState([0, 200]);
+    const [actualValue, setActualValue] = React.useState([0, 229]);
     const [sort, setSort] = React.useState('')
     const plants = usePlantsStore((state) => state.plants)
 
     const isInRange = (value) => {
-        return value.price <= actualValue[1] && value.price >= actualValue[0]
+        return value.price - (value.price * (value.discount / 100)) <= actualValue[1] && value.price - (value.price * (value.discount / 100)) >= actualValue[0]
     }
 
     const filteredPlants = plants.filter(isInRange)
@@ -123,7 +123,7 @@ const Plants = () => {
                                     color='primary'
                                     size='medium'
                                     min={0}
-                                    max={200}
+                                    max={229}
                                 />
                                 <label className='text-15 font-bold'>Price: <span className='text-primary'>${actualValue[0]} - ${actualValue[1]}</span></label>
                                 <button onClick={() => setActualValue(value)} className='bg-primary hover:bg-primaryHover py-8 px-25 text-16 font-bold rounded-6 leading-125 text-white'>Filter</button>
@@ -188,8 +188,8 @@ const Plants = () => {
                         <MenuItem value="">
                             <em>Default sorting</em>
                         </MenuItem>
-                        <MenuItem value={10}>Price (low to high)</MenuItem>
-                        <MenuItem value={20}>Price (high to low)</MenuItem>
+                        <MenuItem value={'low-high'}>Price (low to high)</MenuItem>
+                        <MenuItem value={'high-to-low'}>Price (high to low)</MenuItem>
                         </Select>
                     </FormControl>
                     </div>

@@ -6,6 +6,9 @@ module.exports = {
     './index.html',
   ],
   theme: {
+    screens: {
+      'sm': {'max': '639px'},
+    },
     fontFamily: {
       'cera': ['Cera Pro', 'sans-serif'],
       'hanging': ['Hanging Letters', 'sans-serif']
@@ -27,6 +30,7 @@ module.exports = {
       'circle': '50%'
     },
     borderWidth: {
+      0: '0vw',
       1: '0.07vw',
       2: '0.14vw',
     },
@@ -162,6 +166,7 @@ module.exports = {
         'FB': '#FBFBFB',
         '72': '#727272',
         'AC': '#ACACAC',
+        'A5': '#A5A5A5',
       },
       primary: '#46A358',
       primaryHover: '#3C884B',

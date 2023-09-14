@@ -1,11 +1,11 @@
 import React from 'react'
 import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
 import { usePlantsStore } from '../useStore'
 
 const Plant = ({ plant, index }) => {
     const { addToCart, addToFavorites } = usePlantsStore()
     const [isHovered, setIsHover] = React.useState(false)
+    const currentPrice = plant.price - (plant.price * (plant.discount / 100))
 
     const handleMouseEnter = () => {
         setIsHover(true);
@@ -18,7 +18,8 @@ const Plant = ({ plant, index }) => {
     return (
         <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="flex flex-col gap-12 border-transparent border-t-1 hover:border-primary">
             <div className='relative flex flex-col items-center justify-center h-[20.8vw] bg-grey-FB'>
-                <div className='bg-image w-[17.36vw] h-[17.36vw] mix-blend-multiply' style={{backgroundImage: `url(${plant.img})`}}>
+                <div className='relative bg-image w-[17.36vw] h-[17.36vw] mix-blend-multiply' style={{backgroundImage: `url(${plant.img})`}}>
+                    {plant.discount > 0 && <span className='absolute left-0 top-0 bg-primary text-16 font-medium text-white py-7 px-9'>{plant.discount}% OFF</span>}
                     {
                         isHovered ?
                         <div className='flex justify-center gap-10 absolute bottom-[0.5vw] left-[25%]'>
@@ -58,7 +59,12 @@ const Plant = ({ plant, index }) => {
             </div>
             <div className="flex flex-col">
                 <h6 className='text-16'>{plant.name}</h6>
-                <span className='font-bold text-18 text-primary'>${plant.price}.00</span>
+                <div className="flex gap-15 items-center">
+                    <span className='font-bold text-18 text-primary'>${currentPrice.toFixed(2)}</span>
+                    {
+                        currentPrice === plant.price || <span className='text-18 text-grey-A5 line-through'>${plant.price}.00</span>
+                    }
+                </div>
             </div>
         </div>
     )
