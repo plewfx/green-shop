@@ -26,6 +26,7 @@ module.exports = {
     borderRadius: {
       4: '0.27vw',
       6: '0.41vw',
+      15: '1.11vw',
       30: '2.08vw',
       'circle': '50%'
     },
