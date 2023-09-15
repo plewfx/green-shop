@@ -20,12 +20,16 @@
     }
 
     button, a {
-        transition: background .3s;
+        transition: all .3s;
     }
 
     .css-192zbic-MuiSlider-thumb {
         width: 1vw;
         height: 1vw;
+    }
+
+    .navlink {
+        transition: 0s
     }
 }
 

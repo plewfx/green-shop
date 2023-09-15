@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import { usePlantsStore } from '../useStore'
 
@@ -16,9 +17,9 @@ const Plant = ({ plant, index }) => {
     };
 
     return (
-        <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="flex flex-col gap-12 border-transparent border-t-1 hover:border-primary">
+        <Link to={`/green-shop/shop/${plant.name.toLowerCase().replace(/\s/g, '-')}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="flex flex-col gap-12 border-transparent border-t-1 hover:border-primary">
             <div className='relative flex flex-col items-center justify-center h-[20.8vw] bg-grey-FB'>
-                <div className='relative bg-image w-[17.36vw] h-[17.36vw] mix-blend-multiply' style={{backgroundImage: `url(${plant.img})`}}>
+                <div className='relative bg-image w-[17.36vw] h-[17.36vw] mix-blend-multiply' style={{backgroundImage: `url(${plant.images[0]})`}}>
                     {plant.discount > 0 && <span className='absolute left-0 top-0 bg-primary text-16 font-medium text-white py-7 px-9'>{plant.discount}% OFF</span>}
                     {
                         isHovered ?
@@ -66,7 +67,7 @@ const Plant = ({ plant, index }) => {
                     }
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 
