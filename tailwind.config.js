@@ -7,7 +7,7 @@ module.exports = {
   ],
   theme: {
     screens: {
-      'sm': {'max': '639px'},
+      'sm': {'max': '700px'},
     },
     fontFamily: {
       'cera': ['Cera Pro', 'sans-serif'],

@@ -21,6 +21,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/green-shop/" element={<Layout />}>
             <Route index element={<Home />} />

@@ -164,7 +164,7 @@ const PlantDetail = () => {
                     <div className="flex pb-12 border-b-1 border-[rgba(70,163,88,0.50)]">
                         <h4 className="font-bold text-17 text-primary">Releted Products</h4>
                     </div>
-                    <div className="flex gap-30 overflow-y-scroll">
+                    <div className="flex gap-30 overflow-y-scroll pb-43">
                         {
                             plants.map((plant, index) => {
                                 return (
