@@ -17,10 +17,10 @@ const Plant = ({ plant, index }) => {
     };
 
     return (
-        <Link to={`/green-shop/shop/${plant.name.toLowerCase().replace(/\s/g, '-')}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="flex flex-col gap-12 border-transparent border-t-1 hover:border-primary">
-            <div className='relative flex flex-col items-center justify-center h-[20.8vw] bg-grey-FB'>
-                <div className='relative bg-image w-[17.36vw] h-[17.36vw] mix-blend-multiply' style={{backgroundImage: `url(${plant.images[0]})`}}>
-                    {plant.discount > 0 && <span className='absolute left-0 top-0 bg-primary text-16 font-medium text-white py-7 px-9'>{plant.discount}% OFF</span>}
+        <Link to={`/green-shop/shop/${plant.name.toLowerCase().replace(/\s/g, '-')}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="flex flex-col gap-12 sm:gap-[2.8vw] border-transparent border-t-1 sm:border-t-2 hover:border-primary">
+            <div className='relative flex flex-col items-center justify-center h-[20.8vw] sm:h-[40vw] bg-grey-FB'>
+                <div className='relative bg-image w-[17.36vw] sm:w-[40vw] h-[17.36vw] sm:h-[40vw] mix-blend-multiply' style={{backgroundImage: `url(${plant.images[0]})`}}>
+                    {plant.discount > 0 && <span className='absolute left-0 top-0 bg-primary text-16 sm:text-[3vw] font-medium text-white py-7 sm:py-[1.2vw] px-9 sm:px-[1.8vw]'>{plant.discount}% OFF</span>}
                     {
                         isHovered ?
                         <div className='flex justify-center gap-10 absolute bottom-[0.5vw] left-[25%]'>
@@ -59,11 +59,11 @@ const Plant = ({ plant, index }) => {
                 </div>
             </div>
             <div className="flex flex-col">
-                <h6 className='text-16'>{plant.name}</h6>
-                <div className="flex gap-15 items-center">
-                    <span className='font-bold text-18 text-primary'>${currentPrice.toFixed(2)}</span>
+                <h6 className='text-16 sm:text-[3vw]'>{plant.name}</h6>
+                <div className="flex gap-15 sm:gap-[3vw] items-center">
+                    <span className='font-bold text-18 sm:text-[3.5vw] text-primary'>${currentPrice.toFixed(2)}</span>
                     {
-                        currentPrice === plant.price || <span className='text-18 text-grey-A5 line-through'>${plant.price}.00</span>
+                        currentPrice === plant.price || <span className='text-18 sm:text-[3.5vw] text-grey-A5 line-through'>${plant.price}.00</span>
                     }
                 </div>
             </div>
