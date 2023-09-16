@@ -10,7 +10,7 @@ const PlantDetail = () => {
     
     const currPlant = plants.filter((plant) => plant.name.toLowerCase().replace(/\s/g, '-') == params.id)
     const { images, name, price, discount, isFavorite, addedToCart, reviews } = currPlant[0]
-    const [bigPlantImg, setBigPlantImg] = useState(currPlant[0].images[0])
+    const [bigPlantImg, setBigPlantImg] = useState(images[0])
     const currentPrice = price - (price * (discount / 100))
     const [size, setSize] = useState(0)
     const [count, setCount] = useState(1)
